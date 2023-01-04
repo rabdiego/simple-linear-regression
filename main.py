@@ -1,5 +1,4 @@
 # Importing the modules
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
@@ -11,7 +10,7 @@ X = data.iloc[:, :-1].values
 y = data.iloc[:, -1].values
 
 # Splitting into train set and test set
-X_train, X_test, y_train, y_set = train_test_split(X, y, test_size=0.2, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
 # Training model
 regressor = LinearRegression()
@@ -19,3 +18,8 @@ regressor.fit(X_train, y_train)
 
 # Predicting the test set
 y_pred = regressor.predict(X_test)
+
+# Visualizing the test set results
+plt.scatter(X_test, y_test)
+plt.plot(X_test, y_pred)
+plt.show()
