@@ -22,4 +22,4 @@ y_pred = regressor.predict(X_test)
 # Visualizing the test set results
 plt.scatter(X_test, y_test)
 plt.plot(X_test, y_pred)
-plt.show()
+plt.savefig('plot.png')
